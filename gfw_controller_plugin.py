@@ -104,11 +104,13 @@ class GFWControllerPlugin:
         self.action = QAction(QIcon(icon_path), "GFW Alerts Controller", self.iface.mainWindow())
         self.action.triggered.connect(self.run)
         
-        self.iface.addPluginToPluginsMenu("GFW Alerts Controller", self.action)
+        # CORRECT API METHOD: addPluginToMenu or addPluginToRasterMenu
+        self.iface.addPluginToMenu("&GFW Alerts Controller", self.action)
         self.iface.addToolBarIcon(self.action)
 
     def unload(self):
-        self.iface.removePluginMenu("GFW Alerts Controller", self.action)
+        # CORRECT API METHOD: removePluginMenu
+        self.iface.removePluginMenu("&GFW Alerts Controller", self.action)
         self.iface.removeToolBarIcon(self.action)
         if self.dock:
             self.iface.removeDockWidget(self.dock)
