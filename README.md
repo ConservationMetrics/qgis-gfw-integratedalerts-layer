@@ -6,6 +6,13 @@ This tool dynamically updates tile requests to GFW's Tile Cache API, allowing us
 
 ---
 
+## ⚠️ Provenance & Disclaimer
+
+* **Provenance**: This tool was **vibe coded** (AI-assisted / rapidly prototyped) to address an immediate operational need for streaming dynamic GFW tiles directly into QGIS.
+* **Maintenance & Responsibility**: This repository is provided "as-is" for community use and experimentation. Neither the authors nor associated organizations (including CMI) assume any inherent responsibility over its ongoing maintenance, updates, or how the tool or its output data are used.
+
+---
+
 ## Features
 
 * **Interactive Date Pickers**: Select custom `Start Date` and `End Date` using calendar widgets.
