@@ -18,28 +18,26 @@ This tool dynamically updates tile requests to GFW's Tile Cache API, allowing us
 
 ## Quick Start / Installation
 
-Till this tool gets accepted in the plugin store, here are some ways you can install them in your system:
+Until this tool gets accepted into the official QGIS Plugin Repository, you can run it directly:
 
-### Option 1: Run via Script Editor (Recommended)
+### Run Directly from GitHub
 
-1. Launch **QGIS**.
-2. Open the **Python Console**:
-* **macOS**: `Cmd + Option + P`
-* **Windows/Linux**: `Ctrl + Alt + P`
-
-
-3. Click the **Show Editor** icon (notepad icon in the console toolbar) to open the script editor panel.
-4. Open `gfw_alerts_controller.py` (or paste the code into a new editor tab).
-5. Click the green **Run Script** play button.
-6. A new dock panel titled **GFW Alerts Layer Controller** will appear on the right side of your QGIS window.
-
-### Option 2: Execute in Python Console
-
-Copy and execute `gfw_alerts_controller.py` inside the QGIS Python Console using `exec()`:
+No file downloads or installation required. Open the **QGIS Python Console** (`Cmd + Option + P` on macOS, `Ctrl + Alt + P` on Windows/Linux) and run the following script:
 
 ```python
-with open('/path/to/gfw_alerts_controller.py') as f:
-    exec(f.read())
+import urllib.request
+from qgis.utils import iface
+from qgis.PyQt.QtCore import Qt
+
+# Fetch and execute the controller script directly from GitHub
+url = "https://raw.githubusercontent.com/nicopace/qgis-gfw-integratedalerts-layer/main/gfw_controller_plugin.py"
+code = urllib.request.urlopen(url).read().decode('utf-8')
+exec(code)
+
+# Launch the dock panel
+gfw_dock = GFWLayerControllerDock(iface)
+iface.addDockWidget(Qt.RightDockWidgetArea, gfw_dock)
+gfw_dock.show()
 
 ```
 
