@@ -76,7 +76,7 @@ class GFWLayerControllerDock(QDockWidget):
         raw_params = f"start_date={start_str}&end_date={end_str}&render_type={render_type}&alert_confidence={confidence}"
         encoded_params = urllib.parse.quote(raw_params, safe='')
         
-        base_url = "https://tiles.globalforestwatch.org/gfw_integrated_alerts/v20260814/dynamic/%7Bz%7D/%7Bx%7D/%7By%7D.png"
+        base_url = "https://tiles.globalforestwatch.org/gfw_integrated_alerts/latest/dynamic/%7Bz%7D/%7Bx%7D/%7By%7D.png"
         uri = f"http-header:referer=&type=xyz&url={base_url}?{encoded_params}&zmax=18&zmin=1"
         
         layer_name = "GFW Integrated Alerts (Dynamic)"
