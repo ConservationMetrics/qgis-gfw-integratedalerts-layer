@@ -12,7 +12,7 @@ class GFWLayerControllerDock(QDockWidget):
     def __init__(self, iface):
         super().__init__("GFW Alerts Layer Controller")
         self.iface = iface
-        self.setAllowedAreas(Qt.LeftDockWidgetArea | Qt.RightDockWidgetArea)
+        self.setAllowedAreas(Qt.DockWidgetArea.LeftDockWidgetArea | Qt.DockWidgetArea.RightDockWidgetArea)
         
         widget = QWidget()
         layout = QVBoxLayout()
@@ -118,5 +118,5 @@ class GFWControllerPlugin:
     def run(self):
         if not self.dock:
             self.dock = GFWLayerControllerDock(self.iface)
-            self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dock)
+            self.iface.addDockWidget(Qt.DockWidgetArea.RightDockWidgetArea, self.dock)
         self.dock.show()
