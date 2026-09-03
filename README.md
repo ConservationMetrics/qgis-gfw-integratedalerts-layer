@@ -25,11 +25,21 @@ This tool dynamically updates tile requests to GFW's Tile Cache API, allowing us
 
 ## Quick Start / Installation
 
-Until this tool gets accepted into the official QGIS Plugin Repository, you can run it directly:
+The plugin is available in the official **QGIS Plugin Repository**:
+
+### Install from the Plugin Repository (Recommended)
+
+1. Open QGIS.
+2. Go to **Plugins → Manage and Install Plugins…**.
+3. Switch to the **All** tab (or **Not Installed**) and search for **GFW Integrated Alerts Controller**.
+4. Select the plugin and click **Install Plugin**.
+5. The dock widget can then be opened via **Plugins → GFW Alerts Controller → GFW Alerts Controller**, or by clicking the toolbar icon.
+
+> Plugin page: [plugins.qgis.org/plugins/qgis_gfw_integratedalerts_layer](https://plugins.qgis.org/plugins/qgis_gfw_integratedalerts_layer)
 
 ### Run Directly from GitHub
 
-No file downloads or installation required. Open the **QGIS Python Console** (`Cmd + Option + P` on macOS, `Ctrl + Alt + P` on Windows/Linux) and run the following script:
+Alternatively, you can run the latest version directly without installing. Open the **QGIS Python Console** (`Cmd + Option + P` on macOS, `Ctrl + Alt + P` on Windows/Linux) and run the following script:
 
 ```python
 import urllib.request
