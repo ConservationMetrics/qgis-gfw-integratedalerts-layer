@@ -78,6 +78,8 @@ gfw_dock.show()
 
 **Dataset Endpoint**: Queries `gfw_integrated_alerts` (combining GLAD-L, GLAD-S2, RADD, and DIST-ALERT systems).
 
+**Dynamic Version Lookup**: On launch the plugin queries the [GFW Data API](https://data-api.globalforestwatch.org/dataset/gfw_integrated_alerts) and resolves the current tile version from `data.versions` (last entry, e.g. `v20260907`), caching it for the session. `latest` is deliberately not used in tile URLs because the tile cache/CDN requires explicit static version paths. If the lookup fails (e.g. offline), the plugin falls back to a pinned known-good version so tiles still render, and the dock shows whether the version is live or a fallback.
+
 ---
 
 ## Data Attribution & Citation
