@@ -51,7 +51,7 @@ class VersionResolver:
             self._timer.stop()
         reply, self._reply = self._reply, None
         version = None
-        if reply.error() == QNetworkReply.NoError:
+        if reply.error() == QNetworkReply.NetworkError.NoError:
             try:
                 payload = json.loads(bytes(reply.readAll()).decode("utf-8"))
             except (ValueError, UnicodeDecodeError):
